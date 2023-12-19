@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.4.20/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>5.6-dars</title>
+  </head>
+  <body class="font-sans text-white">
+    <form
+      class="flex flex-col w-[400px] gap-4 justify-center items-center pt-6 ml-[200px]"
+    >
+      <h2 class="text-3xl font-normal">Yangi soz</h2>
+      <input
+        required
+        type="text"
+        placeholder="Eng..."
+        id="ing"
+        class="input input-bordered w-full max-w-xs"
+      />
+      <input
+        required
+        type="text"
+        placeholder="Uzb..."
+        id="uzb"
+        class="input input-bordered w-full max-w-xs"
+      />
+      <button class="btn btn-success text-white w-[320px] submit">
+        submit
+      </button>
+    </form>
+    <div class="absolute top-[54%] w-full h-[1px] bg-slate-300"></div>
+    <section class="jadval w-full flex mt-[140px]">
+      <div class="w-2/4 flex flex-col gap-4 items-center">
+        <h3 class="text-red-800 text-2xl font-bold">Yangi sozlar</h3>
+        <div class="w-full space-x-56 pl-[205px]">
+          <span>EN</span><span>UZ</span>
+        </div>
+        <div class="w-[94%] h-[1px] bg-slate-300"></div>
+        <ol class="yangiSoz w-full flex ml-12 flex-wrap"></ol>
+      </div>
+      <div class="w-[1px] h-full absolute left-[50%] top-0 bg-slate-300"></div>
+      <div class="w-2/4 flex flex-col gap-4 items-center">
+        <h3 class="text-green-800 text-2xl font-bold">Yodlangan sozlar</h3>
+        <div class="w-full space-x-56 pl-[205px]">
+          <span>EN</span><span>UZ</span>
+        </div>
+        <div class="w-[94%] h-[1px] bg-slate-300"></div>
+        <ol class="newTodos w-full flex ml-12 flex-wrap"></ol>
+      </div>
+    </section>
+    <script src="./main.js"></script>
+  </body>
+</html>
