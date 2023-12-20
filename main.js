@@ -8,7 +8,7 @@ let todos = localStorage.getItem("todos")
   ? JSON.parse(localStorage.getItem("todos"))
   : [];
 let son = 1;
-let newTodos = [];
+let newTodos =  [];
 
 submitEl.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -56,9 +56,11 @@ reTodo();
 
 function addTodo(id) {
   const newtodo = todos.find((todo) => todo.id === id);
-  todos = todos.filter((todo) => todo === newtodo);
+  todos = todos.filter((todo) => todo == newtodo.id);
   newTodos.push(newtodo);
   reNewTodos();
+  reTodo();
+  console.log(newtodo);
 }
 
 function reNewTodos() {
@@ -71,7 +73,7 @@ function reNewTodos() {
     </div>
     <div class="flex gap-2 absolute right-0">
       <img
-        onclick ="(leftTodo(${todo.id}))"
+        onclick ="leftTodo(${todo.id} )"
         class="cursor-pointer"
         src="./images/left.svg"
         alt=""
@@ -86,7 +88,7 @@ function reNewTodos() {
   </div>`;
   });
   newTodoEL.innerHTML = htmll;
-  localStorage.setItem("newTodos", JSON.stringify("newTodos"));
+  localStorage.setItem("newTodo", JSON.stringify("newTodo"));
 }
 
 reNewTodos();
@@ -99,4 +101,12 @@ function delate(id) {
 function delatee(id) {
   newTodos = newTodos.filter((todo) => todo.id !== id);
   reNewTodos();
+}
+
+function leftTodo(id) {
+  const newtodo = newTodos.find((todo) => todo.id == id);
+  newTodos = newTodos.filter((todo) => todo.id != id);
+  todos.push(newtodo);
+  reNewTodos();
+  reTodo();
 }
