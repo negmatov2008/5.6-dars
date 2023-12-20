@@ -8,7 +8,7 @@ let todos = localStorage.getItem("todos")
   ? JSON.parse(localStorage.getItem("todos"))
   : [];
 let son = 1;
-let newTodos =  [];
+let newTodos = [];
 
 submitEl.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -56,7 +56,7 @@ reTodo();
 
 function addTodo(id) {
   const newtodo = todos.find((todo) => todo.id === id);
-  todos = todos.filter((todo) => todo == newtodo.id);
+  todos = todos.filter((todo) => todo.id != id);
   newTodos.push(newtodo);
   reNewTodos();
   reTodo();
